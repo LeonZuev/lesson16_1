@@ -18,7 +18,7 @@ function App() {
 
   function handleChange(event) {
    const value = event.target.value
-    setStep(Number(value))
+    setStep(Number(value)) // setStep(value)
   }
   // console.log(step)
   return (
@@ -30,7 +30,7 @@ function App() {
         <span>{count}</span> {"  "}
         <button onClick={handleClickPlus}>+</button>
         </div>
-        <input value={step} onChange={handleChange} type='number'/>
+        <input value={step} onChange={handleChange} type='number'/> 
       </header>
     </div>
   );
