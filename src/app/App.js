@@ -6,14 +6,21 @@ function App() {
   // count - переменная
   // setCount - функция, которая меняет переменную count
   const [count, setCount] = useState(0)
+  const [step, setStep] = useState(1)
+
 
   function handleClickMinus() {
-    setCount(count - 1) 
+    setCount(count - step) 
   }
   function handleClickPlus() {
-    setCount(count + 1) 
+    setCount(count + step) 
   }
 
+  function handleChange(event) {
+   const value = event.target.value
+    setStep(Number(value))
+  }
+  // console.log(step)
   return (
     <div className="App">
       <header className="App-header">
@@ -23,7 +30,7 @@ function App() {
         <span>{count}</span> {"  "}
         <button onClick={handleClickPlus}>+</button>
         </div>
-        <input value={0}/>
+        <input value={step} onChange={handleChange} type='number'/>
       </header>
     </div>
   );
